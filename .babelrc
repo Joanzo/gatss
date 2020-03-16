@@ -1,0 +1,27 @@
+{
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "~storybook": "./.storybook",
+          "~": "./src",
+          "~assets": "./src/assets",
+          "~core": "./src/components/core",
+          "~sections": "./src/components/sections"
+        }
+      }
+    ]
+  ],
+  "presets": [
+    [
+      "babel-preset-gatsby",
+      {
+        "targets": {
+          "browsers": [">0.25%", "not dead"]
+        }
+      }
+    ]
+  ]
+}
