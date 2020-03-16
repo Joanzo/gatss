@@ -31,7 +31,7 @@ export default create({
   // inputTextColor: 'black',
   // inputBorderRadius: 4,
 
-  brandTitle: 'GATSJE - GAtsby Typescript Storybook Jest Enzyme',
+  brandTitle: 'GATSS - GAtsby Typescript Storybook Starter',
   // brandUrl: 'https://example.com',
   // brandImage: 'https://placehold.it/350x150',
 });
