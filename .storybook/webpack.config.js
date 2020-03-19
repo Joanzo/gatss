@@ -99,18 +99,14 @@ module.exports = ({ config }) => {
         options: {
           ident: 'postcss',
           sourceMap: true,
-          plugins: () => [
-            require('autoprefixer')({
-              browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9'],
-            }),
-          ],
+          plugins: () => [require('autoprefixer')()],
         },
       },
       {
         loader: 'sass-loader',
         options: {
           prependData: `
-            @import "global";
+            @import "global.scss";
             `,
           sassOptions: {
             includePaths: ['src/components/core/global'],

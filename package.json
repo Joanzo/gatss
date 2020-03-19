@@ -91,7 +91,9 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "test": "jest",
+    "test:coverage": "yarn test --coverage",
+    "test:watch": "jest --watch",
     "storybook": "SET NODE_ENV=production&& start-storybook -p 6006 -c .storybook",
     "build-storybook": "SET NODE_ENV=production&& build-storybook -s static"
   },
@@ -101,5 +103,11 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
-  }
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "not IE_Mob 11",
+    "maintained node versions"
+  ]
 }

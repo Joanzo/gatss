@@ -5,22 +5,36 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby's default starter
+  GATSS<br/>
+  <span style="font-size: 1rem">Gatsby Typescript Storybook Sass</span>
 </h1>
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+Kick off your project with gatsby default boilerplate configured with Typescript, Storybook, & Sass with CSS Modules, tested with Jest & Enzyme. Preconfigured with custom svg icons & icons showcase as well !! This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+
+
 
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
+1.  *Clone The Project**
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+    Clone from github repo
 
     ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
+    # clone project
+    git clone https://github.com/joanzo/gatss
+    ```
+
+2.  **Run NPM Install / Yarn Install**
+
+    Install all dependencies
+
+    ```shell
+    # install using yarn
+    yarn install
+
+    # or install using npm
+    npm install
     ```
 
 1.  **Start developing.**
@@ -28,13 +42,18 @@ _Have another more specific idea? You may want to check out our vibrant collecti
     Navigate into your new site’s directory and start it up.
 
     ```shell
+    # this command will run both gatsby develop and storybook concurrently
     cd my-default-starter/
-    gatsby develop
+    npm start
     ```
 
 1.  **Open the source code and start editing!**
 
-    Your site is now running at `http://localhost:8000`!
+    2 sites are running
+
+    - Your storybook site is now running at `http://localhost:6006`!
+
+    - Your gatsby site is now running at `http://localhost:8000`!
 
     _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
@@ -47,6 +66,12 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
     .
     ├── node_modules
     ├── src
+        ├── assets
+        ├── components
+            ├── cores
+            ├── sections
+        ├── pages
+        ├── utils
     ├── .gitignore
     ├── .prettierrc
     ├── gatsby-browser.js
