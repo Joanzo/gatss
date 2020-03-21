@@ -1,0 +1,22 @@
+// Elevation Shadow System
+//
+// Based on the Refactoring UI shadows, pages 161
+// ----------------------------------------
+$shadow-color: hsl(0, 0%, 59%);
+$shadow-opacity: 0.36;
+$shadow-levels: (
+  1: 0 2px 4px rgba($shadow-color, $shadow-opacity),
+  2: 0 4px 6px rgba($shadow-color, $shadow-opacity),
+  3: 0 5px 15px rgba($shadow-color, $shadow-opacity),
+  4: 0 10px 24px rgba($shadow-color, $shadow-opacity),
+  5: 0 15px 35px rgba($shadow-color, $shadow-opacity),
+);
+
+@mixin shadow-level($level, $secondLevel: null) {
+  @if $secondLevel != null {
+    box-shadow: map-get($shadow-levels, $level),
+      map-get($shadow-levels, $secondLevel);
+  } @else {
+    box-shadow: map-get($shadow-levels, $level);
+  }
+}

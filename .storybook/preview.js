@@ -1,14 +1,11 @@
 // https://storybook.js.org/docs/configurations/typescript-config/
-import React from 'react';
-import { addDecorator } from '@storybook/react';
-// import { withOptions } from '@storybook/addon-options';
-// import { withInfo } from '@storybook/addon-info';
-
 // https://www.gatsbyjs.org/docs/visual-testing-with-storybook/
-import { configure } from '@storybook/react';
+import React from 'react';
+import { addDecorator, configure } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs } from '@storybook/addon-knobs';
-import { checkA11y } from '@storybook/addon-a11y';
+import { withA11y } from '@storybook/addon-a11y';
+import GlobalStyles from '~core/GlobalStyles/GlobalStyles';
 
 const req = require.context('../src', true, /\.stories.tsx$/);
 
@@ -32,28 +29,19 @@ window.___navigate = pathname => {
 // Global Styles ==============================
 addDecorator(story => (
   <>
+    <GlobalStyles />
     <div style={{ padding: '3rem' }}>{story()}</div>
   </>
 ));
 
 addDecorator(withKnobs);
-addDecorator(checkA11y);
+addDecorator(withA11y);
 
 // automatically import all files ending in *.stories.js
 configure(loadStories, module);
 
-// // If you'd like to add global styles to all stories, modify this component.
-// // addDecorator(GlobalStyleDecorator);
-
-// // If you'd like to customize your storybook instance. See: https://github.com/storybooks/storybook/tree/next/addons/options
-// addDecorator(
-//   withOptions({
-//     name: 'gatsby-ts-sb-starter',
-//     url: 'https://testing.om',
-//     hierarchySeparator: /\/|\./,
-//     hierarchyRootSeparator: /\|/,
-//   }),
-// );
+// If you'd like to add global styles to all stories, modify this component.
+// addDecorator(GlobalStyleDecorator);
 
 // addDecorator(
 //   withInfo({

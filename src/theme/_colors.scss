@@ -1,0 +1,13 @@
+// Colours
+$color-primary: #b000b5;
+$color-red: rgb(213, 35, 35);
+
+$color-white: #fff;
+$color-black: #000;
+
+/* stylelint-disable */
+:export {
+  colorPrimary: $color-primary;
+  colorSecondary: $color-red;
+}
+/* stylelint-enable */

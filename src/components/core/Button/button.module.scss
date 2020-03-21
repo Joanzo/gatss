@@ -1,4 +1,20 @@
+// base button abstract class. All the btn-skin-x classes needs to extend this abstract class
+
 .btn {
-  color: $color-primary;
-  display: inline-flex;
+  @extend %base-button-styles;
+  @include shadow-level(3);
+
+  &-children {
+    display: inline-flex;
+  }
+
+  &--active {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+
+  &:hover {
+    background-color: $color-black;
+    color: $color-white;
+  }
 }

@@ -31,7 +31,7 @@ export default create({
   // inputTextColor: 'black',
   // inputBorderRadius: 4,
 
-  brandTitle: 'GATSS - GAtsby Typescript Storybook Starter',
+  brandTitle: 'GATSS - GAtsby Typescript Storybook Sass',
   // brandUrl: 'https://example.com',
   // brandImage: 'https://placehold.it/350x150',
 });

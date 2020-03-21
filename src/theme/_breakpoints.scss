@@ -1,0 +1,16 @@
+// breakpoints
+$breakpoint-xs: 420px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 990px;
+$breakpoint-lg: 1200px;
+$breakpoint-xl: 1600px;
+
+/* stylelint-disable */
+:export {
+  breakpointXS: $breakpoint-xs;
+  breakpointSM: $breakpoint-sm;
+  breakpointMD: $breakpoint-md;
+  breakpointLG: $breakpoint-lg;
+  breakpointXL: $breakpoint-xl;
+}
+/* stylelint-enable */

@@ -9,14 +9,11 @@
   <span style="font-size: 1rem">Gatsby Typescript Storybook Sass</span>
 </h1>
 
-
 Kick off your project with gatsby default boilerplate configured with Typescript, Storybook, & Sass with CSS Modules, tested with Jest & Enzyme. Preconfigured with custom svg icons & icons showcase as well !! This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
-
-
 
 ## 🚀 Quick start
 
-1.  *Clone The Project**
+1.  \*Clone The Project\*\*
 
     Clone from github repo
 
@@ -37,7 +34,7 @@ Kick off your project with gatsby default boilerplate configured with Typescript
     npm install
     ```
 
-1.  **Start developing.**
+3.  **Start developing.**
 
     Navigate into your new site’s directory and start it up.
 
@@ -47,7 +44,7 @@ Kick off your project with gatsby default boilerplate configured with Typescript
     npm start
     ```
 
-1.  **Open the source code and start editing!**
+4.  **Open the source code and start editing!**
 
     2 sites are running
 
@@ -66,12 +63,16 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
     .
     ├── node_modules
     ├── src
-        ├── assets
+        ├── @types
         ├── components
             ├── cores
             ├── sections
+        ├── icons
         ├── pages
-        ├── utils
+        ├── theme
+    ├── static
+        ├── images
+        ├── fonts
     ├── .gitignore
     ├── .prettierrc
     ├── gatsby-browser.js

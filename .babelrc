@@ -7,7 +7,7 @@
         "alias": {
           "~storybook": "./.storybook",
           "~": "./src",
-          "~assets": "./src/assets",
+          "~icons": "./src/icons",
           "~core": "./src/components/core",
           "~sections": "./src/components/sections"
         }

@@ -1,0 +1,37 @@
+$btn-border-radius: 6px;
+$btn-font-weight: 600;
+$btn-padding-vertical: 12px;
+$btn-padding-horizontal: 16px;
+$btn-transition: all 0.3s ease-in;
+$btn-icon-margin: 8px;
+
+%base-button-styles {
+  align-items: center;
+  border: 0 none;
+  border-radius: $btn-border-radius;
+  cursor: pointer;
+  display: inline-flex;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1;
+  padding: $btn-padding-vertical $btn-padding-horizontal;
+  transition: $btn-transition;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  svg {
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+
+  svg:first-child {
+    margin-right: $btn-icon-margin;
+  }
+
+  svg:last-child {
+    margin-left: $btn-icon-margin;
+  }
+}

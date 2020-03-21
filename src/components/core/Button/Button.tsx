@@ -1,15 +1,19 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import Icon from '~core/Icon/Icon';
-import style from './button.module.scss';
+import styles from './button.module.scss';
 
 interface ButtonProps {
   children: React.ReactNode;
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   className?: string;
   disabled?: boolean;
+  isActive?: boolean;
   prefixIcon?: AppLib.IconString;
   suffixIcon?: AppLib.IconString;
 }
+
+const cx = classNames.bind(styles);
 
 const Button = (props: ButtonProps) => {
   const {
@@ -19,17 +23,20 @@ const Button = (props: ButtonProps) => {
     disabled,
     prefixIcon,
     suffixIcon,
+    isActive = false,
   } = props;
+
+  const cxOutput = cx('btn', { 'btn--active': isActive }, className);
 
   return (
     <button
       disabled={disabled}
       onClick={onClick}
-      className={`${style.btn} ${className}`}
+      className={cxOutput}
       type="button"
     >
       {prefixIcon ? <Icon icon={prefixIcon} /> : null}
-      {children}
+      <span className={cx('btn-children')}>{children}</span>
       {suffixIcon ? <Icon icon={suffixIcon} /> : null}
     </button>
   );

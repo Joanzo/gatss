@@ -1,0 +1,9 @@
+// All of these files should ONLY be vars and mixin without application itself
+// The application should be used on src/components folder
+@import 'breakpoints';
+@import 'buttons';
+@import 'colors';
+@import 'fonts';
+@import 'shadows';
+@import 'spacings';
+@import 'typography';

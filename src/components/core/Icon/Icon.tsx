@@ -1,5 +1,5 @@
 import React from 'react';
-import iconsMap from '~assets/icons';
+import iconsMap from '~icons';
 
 interface IconProps {
   icon: AppLib.IconString;

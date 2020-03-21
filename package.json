@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Joe Un <jo@joanzo.com>",
   "dependencies": {
+    "classnames": "^2.2.6",
     "dotenv": "^8.2.0",
     "gatsby": "^2.19.32",
     "gatsby-image": "^2.2.39",
@@ -33,6 +34,7 @@
     "@storybook/addons": "^5.3.14",
     "@storybook/react": "^5.3.14",
     "@svgr/webpack": "^5.2.0",
+    "@types/classnames": "^2.2.10",
     "@types/jest": "^25.1.4",
     "@types/react-helmet": "^5.0.15",
     "@types/storybook__addon-info": "^5.2.1",
@@ -54,8 +56,10 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.0",
+    "file-loader": "^5.1.0",
     "jest": "^25.1.0",
     "node-sass": "^4.13.1",
+    "node-sass-utils": "^1.1.2",
     "postcss-loader": "^3.0.0",
     "prettier": "^1.19.1",
     "prettier-eslint": "^9.0.1",
@@ -70,7 +74,8 @@
     "stylelint-prettier": "^1.1.2",
     "ts-jest": "^25.2.1",
     "ts-loader": "^6.2.1",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "url-loader": "^4.0.0"
   },
   "resolutions": {
     "react": "^16.13.0"
@@ -94,8 +99,8 @@
     "test": "jest",
     "test:coverage": "yarn test --coverage",
     "test:watch": "jest --watch",
-    "storybook": "SET NODE_ENV=production&& start-storybook -p 6006 -c .storybook",
-    "build-storybook": "SET NODE_ENV=production&& build-storybook -s static"
+    "storybook": "SET NODE_ENV=test&& start-storybook -p 6006 -c .storybook -s static",
+    "build-storybook": "SET NODE_ENV=production&& npm run clean && build-storybook -s static"
   },
   "repository": {
     "type": "git",

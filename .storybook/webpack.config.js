@@ -46,6 +46,8 @@ module.exports = ({ config }) => {
 
   config.resolve.extensions.push('.ts', '.tsx');
 
+  config.devtool = 'source-map';
+
   // Add SVGR Loader
   // ========================================================
   // Remove svg rules from existing webpack rule
@@ -69,47 +71,51 @@ module.exports = ({ config }) => {
     ],
   });
 
-  // config.module.rules.push({
-  //   test: /\.scss$/,
-  //   use: [
-  //     { loader: 'style-loader' },
-  //     'css-loader',
-  //     'sass-loader',
-  //   ],
-  //   include: path.resolve(__dirname, '../'),
-  // });
+  config.module.rules.unshift({
+    test: /\.(png|jpg|gif|woff|woff2|eot|ttf)(\?.*)?$/,
+    loader: 'file-loader',
+    query: { name: 'static/media/[name].[ext]' },
+  });
 
   config.module.rules.push({
-    test: /\.module\.scss$/,
+    test: /\.scss$/,
     loaders: [
       {
         loader: 'style-loader',
-        // options: { sourceMap: true },
       },
       {
         loader: require.resolve('css-loader'),
         options: {
-          importLoaders: 1,
-          modules: true,
-          // localIdentName: '[name]__[local]___[hash:base64:5]',
+          importLoaders: 2,
+          modules: {
+            localIdentName: '[name]__[local]___[hash:base64:5]',
+          },
+          sourceMap: true,
         },
+      },
+      {
+        loader: 'resolve-url-loader',
       },
       {
         loader: 'postcss-loader',
         options: {
           ident: 'postcss',
           sourceMap: true,
-          plugins: () => [require('autoprefixer')()],
+          plugins: [
+            require('autoprefixer')({
+              browsers: ['>0.25%', 'not dead'],
+            }),
+          ],
         },
       },
       {
         loader: 'sass-loader',
         options: {
           prependData: `
-            @import "global.scss";
+            @import "theme.scss";
             `,
           sassOptions: {
-            includePaths: ['src/components/core/global'],
+            includePaths: ['src/theme'],
           },
         },
       },
