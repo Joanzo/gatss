@@ -30,6 +30,7 @@ const Button = (props: ButtonProps) => {
 
   return (
     <button
+      data-testid="button"
       disabled={disabled}
       onClick={onClick}
       className={cxOutput}
