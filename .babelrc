@@ -7,9 +7,11 @@
         "alias": {
           "~storybook": "./.storybook",
           "~": "./src",
-          "~icons": "./src/icons",
           "~core": "./src/components/core",
-          "~sections": "./src/components/sections"
+          "~sections": "./src/components/sections",
+          "~static": "./static",
+          "~theme": "./theme",
+          "~utils": "./src/utils"
         }
       }
     ]

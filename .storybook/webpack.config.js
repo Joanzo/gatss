@@ -48,18 +48,18 @@ module.exports = ({ config }) => {
 
   config.devtool = 'source-map';
 
-  // Add SVGR Loader
-  // ========================================================
-  // Remove svg rules from existing webpack rule
-  const assetRule = config.module.rules.find(({ test }) => test.test('.svg'));
+  const pathToInlineSvg = path.resolve(__dirname, '../static/icons');
+  const fileLoaderRule = config.module.rules.find(rule =>
+    rule.test.test('.svg'),
+  );
+  fileLoaderRule.exclude = pathToInlineSvg;
 
-  const assetLoader = {
-    loader: assetRule.loader,
-    options: assetRule.options || assetRule.query,
-  };
-
-  config.module.rules.unshift({
-    test: /\.svg$/,
+  config.module.rules.push({
+    test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+    include: pathToInlineSvg,
+    issuer: {
+      test: /\.(j|t)sx?$/,
+    },
     use: [
       {
         loader: '@svgr/webpack',
@@ -67,15 +67,53 @@ module.exports = ({ config }) => {
           icon: true,
         },
       },
-      assetLoader,
     ],
   });
 
-  config.module.rules.unshift({
-    test: /\.(png|jpg|gif|woff|woff2|eot|ttf)(\?.*)?$/,
-    loader: 'file-loader',
-    query: { name: 'static/media/[name].[ext]' },
+  config.module.rules.push({
+    test: /\.svg(\?.*)?$/,
+    use: [
+      'url-loader', // for file-loader or url-loader or svg-url-loader
+      'svg-transform-loader',
+    ],
   });
+
+  // Add SVGR Loader
+  // ========================================================
+  // Remove svg rules from existing webpack rule
+  // const assetRule = config.module.rules.find(({ test }) => test.test('.svg'));
+
+  // const assetLoader = {
+  //   loader: assetRule.loader,
+  //   options: assetRule.options || assetRule.query,
+  // };
+
+  // config.module.rules.unshift({
+  //   test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+  //   issuer: {
+  //     test: /\.(j|t)sx?$/,
+  //   },
+  //   use: [
+  //     {
+  //       loader: '@svgr/webpack',
+  //       options: {
+  //         icon: true,
+  //       },
+  //     },
+  //     // assetLoader,
+  //   ],
+  // });
+
+  // config.module.rules.push({
+  //   test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+  //   loader: 'svg-url-loader',
+  // });
+
+  // config.module.rules.unshift({
+  //   test: /\.(png|jpg|gif|woff|woff2|eot|ttf)(\?.*)?$/,
+  //   loader: 'file-loader',
+  //   query: { name: 'static/media/[name].[ext]' },
+  // });
 
   config.module.rules.push({
     test: /\.scss$/,

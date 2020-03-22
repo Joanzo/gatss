@@ -6,7 +6,7 @@ import { boolean, optionsKnob, text } from '@storybook/addon-knobs';
 import { documentationConfig } from '~storybook/constants';
 
 import Button from '~core/Button/Button';
-import { getIconsNames } from '~core/Icon/Icon';
+import { getIconsNames } from '~utils/icons';
 
 const story = storiesOf('Core|Buttons', module)
   .addDecorator(withInfo)

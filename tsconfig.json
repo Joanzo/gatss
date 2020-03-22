@@ -47,9 +47,11 @@
     "paths": {
       "~/*": ["src/*"],
       "~storybook/*": [".storybook/*"],
-      "~icons/*": ["src/icons/*"],
       "~core/*": ["src/components/core/*"],
-      "~sections/*": ["src/components/sections/*"]
+      "~sections/*": ["src/components/sections/*"],
+      "~static/*": ["static/*"],
+      "~theme/*": ["src/theme/*"],
+      "~utils/*": ["src/utils/*"]
     } /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */,
     // "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
     // "typeRoots": ["./src/@types", "./node_modules/@types"],                       /* List of folders to include type definitions from. */
