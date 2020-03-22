@@ -1,5 +1,5 @@
 import React from 'react';
-import iconsMap from '~icons';
+import iconsMap from '~icons/index';
 
 interface IconProps {
   icon: AppLib.IconString;
@@ -23,6 +23,7 @@ const Icon = (props: IconProps) => {
   const IconSVG = iconsMap[icon];
   return (
     <IconSVG
+      data-testid="icon"
       className={`icon ${className}`}
       style={{
         ...(color && { fill: color }),
