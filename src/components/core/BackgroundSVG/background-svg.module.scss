@@ -1,0 +1,12 @@
+.bg-icon-example {
+  @include bg-svg('arrow-thin-left', '#ff0000');
+  display: block;
+}
+
+.bg-icon-example-green {
+  @include bg-svg('attachment', '#42f57e');
+}
+
+.bg-icon-example-blue {
+  @include bg-svg('arrow-thin-right', '#4287f5');
+}

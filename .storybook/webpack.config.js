@@ -73,7 +73,7 @@ module.exports = ({ config }) => {
   config.module.rules.push({
     test: /\.svg(\?.*)?$/,
     use: [
-      'url-loader', // for file-loader or url-loader or svg-url-loader
+      'svg-url-loader', // for file-loader or url-loader or svg-url-loader
       'svg-transform-loader',
     ],
   });
@@ -116,7 +116,7 @@ module.exports = ({ config }) => {
   // });
 
   config.module.rules.push({
-    test: /\.scss$/,
+    test: /\.s(a|c)ss$/,
     loaders: [
       {
         loader: 'style-loader',
@@ -128,11 +128,18 @@ module.exports = ({ config }) => {
           modules: {
             localIdentName: '[name]__[local]___[hash:base64:5]',
           },
+          localsConvention: 'dashesOnly',
           sourceMap: true,
         },
       },
       {
         loader: 'resolve-url-loader',
+        options: {
+          keepQuery: true, // so the svg query keep in place
+        },
+      },
+      {
+        loader: 'svg-transform-loader/encode-query',
       },
       {
         loader: 'postcss-loader',

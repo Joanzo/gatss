@@ -1,0 +1,7 @@
+{
+  "name": "gatsby-plugin-sass-custom",
+  "version": "1.0.0",
+  "description": "Gatsby plugin using custom loadaer for scss / sass",
+  "main": "index.js",
+  "license": "MIT"
+}

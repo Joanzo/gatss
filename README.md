@@ -9,7 +9,21 @@
   <span style="font-size: 1rem">Gatsby Typescript Storybook Sass</span>
 </h1>
 
-Kick off your project with gatsby default boilerplate configured with Typescript, Storybook, & Sass with CSS Modules, tested with Jest & Enzyme. Preconfigured with custom svg icons & icons showcase as well !! This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+Kick off your project with gatsby default boilerplate configured with everything to build a project easier, such as:
+
+<ul>
+<li>Gatsby Typescript</li>
+<li>Storybook Typescript</li>
+<li>Sass as CSS Modules, already configured for theming purpose</li>
+<li>Using Custom Font Example</li>
+<li>Using Google Font Example</li>
+<li>SVGR for svg handling such as icon</li>
+<li>SVG transform loader to include svg as background with custom color on scss</li>
+<li>Jest + React Testing Library</li>
+<li>TSLint + ESLint + Prettier based on AirBnb rules</li>
+<li>StyleLint + Prettier based on sass-guidelines rules</li>
+</ul>
+This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
 ## 🚀 Quick start
 
@@ -62,17 +76,20 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
     .
     ├── node_modules
+    ├── plugins // local gatsby plugins
     ├── src
         ├── @types
         ├── components
             ├── cores
             ├── sections
-        ├── icons
         ├── pages
         ├── theme
+        ├── utils
     ├── static
-        ├── images
         ├── fonts
+        ├── icons
+        ├── images
+    ├── test-utils // jest related utility
     ├── .gitignore
     ├── .prettierrc
     ├── gatsby-browser.js

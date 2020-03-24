@@ -1,0 +1,8 @@
+@mixin bg-svg($svg-name, $color) {
+  $base-color: str-slice(inspect($color), 2);
+  background-image: unquote(
+    'url("../../static/icons/' + $svg-name + '.svg?fill=%23' + $base-color +
+      '")'
+  );
+  background-repeat: no-repeat;
+}

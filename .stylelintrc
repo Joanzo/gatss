@@ -1,4 +1,10 @@
 {
+  "ignoreFiles": [
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
   "extends": [
     "stylelint-config-sass-guidelines",
     "stylelint-config-prettier"

@@ -4,8 +4,12 @@ import { Link } from 'gatsby';
 import Layout from '../components/sections/layout';
 import Image from '../components/sections/image';
 import SEO from '../components/sections/seo';
-import Icon, { getIconsNames } from '~core/Icon/Icon';
+import Icon from '~core/Icon/Icon';
 import Button from '~core/Button/Button';
+import BackgroundSVG from '~core/BackgroundSVG/BackgroundSVG';
+import BgSVGStyles from '~core/BackgroundSVG/background-svg.module.scss';
+
+console.log(BgSVGStyles);
 
 const IndexPage = (): JSX.Element => (
   <Layout>
@@ -16,7 +20,8 @@ const IndexPage = (): JSX.Element => (
     <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
       <Image />
     </div>
-    <Button>Testing Button</Button>
+    <Button suffixIcon="arrow-thin-right">Testing Button</Button>
+    <BackgroundSVG className={BgSVGStyles.bgIconExample} />
     <Link to="/page-2/">
       Go to page 2 <Icon icon="arrow-thin-right" />
     </Link>

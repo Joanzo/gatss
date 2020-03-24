@@ -1,0 +1,7 @@
+{
+  "name": "gatsby-plugin-svgr-custom",
+  "version": "1.0.0",
+  "description": "Gatsby plugin using custom loader for svg",
+  "main": "index.js",
+  "license": "MIT"
+}

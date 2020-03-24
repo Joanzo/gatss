@@ -12,7 +12,7 @@ interface ButtonProps {
   prefixIcon?: AppLib.IconString;
   suffixIcon?: AppLib.IconString;
 }
-
+console.log('BUTTON STYLES: ', styles);
 const cx = classNames.bind(styles);
 
 const Button = (props: ButtonProps) => {
@@ -26,7 +26,7 @@ const Button = (props: ButtonProps) => {
     isActive = false,
   } = props;
 
-  const cxOutput = cx('btn', { 'btn--active': isActive }, className);
+  const cxOutput = cx('btn', { btnActive: isActive }, className);
 
   return (
     <button

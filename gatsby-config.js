@@ -32,17 +32,8 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-svgr`,
-    {
-      resolve: `gatsby-plugin-sass`,
-      options: {
-        data: `
-          @import "theme.scss";
-          `,
-        includePaths: [`${__dirname}/src/theme`],
-        useResolveUrlLoader: true,
-      },
-    },
+    `gatsby-plugin-sass-custom`,
+    `gatsby-plugin-svgr-custom`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

@@ -1,0 +1,7 @@
+{
+  "name": "gatsby-plugin-js-custom",
+  "version": "1.0.0",
+  "description": "Gatsby plugin using custom loader for js",
+  "main": "index.js",
+  "license": "MIT"
+}
